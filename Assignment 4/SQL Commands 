@@ -1,0 +1,26 @@
+//These are the SQL commands which have to be executed before the program is executed.
+
+MariaDB [(none)]> create database goods;
+
+MariaDB [(none)]> use goods;
+
+MariaDB [goods]> create table Item(mId int(5) UNIQUE,mName varchar(40),mType varchar(40),mPrice int(10) ,mQuantity int(10));
+
+MariaDB [goods]> create table PriceOfItem(mId int(5) UNIQUE, mPricePerItem double(5,2), mSalesTaxLiability double(5,2), mFinalPrice double(5,2));
+
+MariaDB [goods]> insert into Item values (1,'A','imported',546,20);
+
+MariaDB [goods]> insert into Item values (2,'B','raw',54,4);
+
+MariaDB [goods]> insert into Item values (3,'C','manufactured',860,82);
+
+//PriceOfItem Table after code execution
+
+MariaDB [goods]> select * from PriceOfItem;
++------+---------------+--------------------+-------------+
+| mId  | mPricePerItem | mSalesTaxLiability | mFinalPrice |
++------+---------------+--------------------+-------------+
+|    1 |         27.30 |               5.27 |       32.57 |
+|    2 |         13.50 |               1.69 |       15.19 |
+|    3 |         10.49 |               1.55 |       12.03 |
++------+---------------+--------------------+-------------+

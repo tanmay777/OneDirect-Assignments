@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
+
 class Item{
     String mName,mType;
     int mPrice,mQuantity;
@@ -103,9 +104,9 @@ public class Main{
             System.out.println("Name: "+items.get(i).mName);
             System.out.println("Total Price: "+items.get(i).mPrice);
             System.out.println("Quantity: "+items.get(i).mQuantity);
-            System.out.println("Price per Item: "+items.get(i).mPricePerItem);
-            System.out.println("Sales Tax Liability: "+items.get(i).mSalesTaxLiability);
-            System.out.println("Final Price: "+items.get(i).mFinalPrice);
+            System.out.println("Price per Item: "+String.format(java.util.Locale.US,"%.2f", items.get(i).mPricePerItem));
+            System.out.println("Sales Tax Liability: "+String.format(java.util.Locale.US,"%.2f", items.get(i).mSalesTaxLiability));
+            System.out.println("Final Price: "+String.format(java.util.Locale.US,"%.2f", items.get(i).mFinalPrice));
             System.out.println();
         }
     }
